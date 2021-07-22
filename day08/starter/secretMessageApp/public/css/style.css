@@ -29,3 +29,10 @@ input {
 a {
   font-weight: 600;
 }
+
+#grid {
+    display: grid;
+    gap: 1 rem;
+
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
