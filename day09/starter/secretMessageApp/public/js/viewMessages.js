@@ -10,7 +10,8 @@ const findMessage = (messages) => {
     const passcodeAttempt = document.querySelector('#passcode').value;
     for(message in messages) {
         const messageData = messages[message];
-        if(messageData.passcode === passcodeAttempt) {
+        console.log(`Record Passcode: ${messageData.passcode} vs Attempted Passcode: ${new Hashes.MD5().hex(passcodeAttempt)}`)
+        if(messageData.passcode === new Hashes.MD5().hex(passcodeAttempt)) {
             renderMessageAsHtml(messageData.message)
         }
     }
